@@ -9,9 +9,11 @@ function getTodaysName(dateString) {
     let dayOfWeek = daysOfWeek[date.getDay()];
     return dayOfWeek;
 }
+// Display the day of the week
+
 function getDay() {
-    var inputElement = document.getElementById("datetime");
-    var inputValue = inputElement.value;
+    let inputElement = document.getElementById("datetime");
+    let inputValue = inputElement.value;
     let dayOfWeek = getTodaysName(inputValue);
     if (dayOfWeek === undefined) {
         document.getElementById("Date").innerHTML = `
@@ -22,6 +24,29 @@ function getDay() {
         document.getElementById("Date").innerText ="The day of the week: "+ dayOfWeek;
     }
      return inputValue;
+}
+
+// 2.Math Object:
+function calculate(numbers) {
+    let sumOfSquares = 0;
+  
+    for (let i = 0; i < numbers.length; i++) {
+      sumOfSquares += numbers[i] * numbers[i];
+    }
+  
+    let squareRoot = Math.sqrt(sumOfSquares);
+    return squareRoot;
+}
+
+function math() {
+    let numbers = document.getElementById('numbers').value;
+    let numberArray = numbers.split(","); // Split the input into an array using comma as the delimiter
+    console.log(numberArray);
+    let result = calculate(numberArray);
+    console.log(result); // Output: 7.416198487095663
+    document.getElementById('numbers').value=" "
+    
+      
 }
 
 
