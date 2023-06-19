@@ -38,10 +38,10 @@ function calculate(numbers) {
 
 function math() {
     let numbers = document.getElementById('numbers').value;
-    let numberArray = numbers.split(","); // Split the input into an array using comma as the delimiter
+    let numberArray = numbers.split(","); 
     console.log(numberArray);
     let result = calculate(numberArray);
-    console.log(result); // Output: 7.416198487095663
+    console.log(result); 
     document.getElementById('result').innerHTML = `
     <h3 id="result" class="text-gray-500 font-bold"> The square root of the sum of squares result:- ${result} </h3>
 
@@ -51,21 +51,29 @@ function math() {
 
 async function isPrime() {
     const number = await document.getElementById('isPrime').value;
-    if (number < 2) {
+  if (number < 2) {
+    document.getElementById('isPrimeText').innerText="(false) No! it is not a prime number"
+    console.log(false);
         return false;
       }
     for (let i = 2; i <= Math.sqrt(number); i++) {
-        if (number % i === 0) {
+      if (number % i === 0) {
+        console.log(false);
+        document.getElementById('isPrimeText').innerText="(false) No! it is not a prime number"
         return false;
       }
-    }
+  }
+  console.log(true);
+  document.getElementById('isPrimeText').innerText="(true) Yes! it is a prime number"
     return true;
 }
 // Window Object
 
   function openNewWindow(url, width, height) {
     window.open(url, '_blank', `width=${width}, height=${height}`);
-  }
+}
+// Please uncomment the function calling below
+  
 // openNewWindow("https://www.example.com", 800, 600);
   
 
@@ -121,7 +129,7 @@ function getCurrentLocation() {
       const x = event.clientX;
       const y = event.clientY;
 
-        // Please comment out the alert message below.
+        // Please uncomment the alert message below.
 
       // alert(`Clicked at coordinates (x, y): ${x}, ${y}`);
     });
@@ -130,7 +138,7 @@ function getCurrentLocation() {
     document.addEventListener('keydown', function(event) {
       const keyCode = event.keyCode || event.which;
 
-      // Please comment out the alert message below.
+      // Please uncomment the alert message below.
 
       // alert(`Key pressed with key code: ${keyCode}`);
     });
@@ -144,11 +152,8 @@ function getCurrentLocation() {
 
 //   8.HTML DOM Document:
 document.addEventListener('DOMContentLoaded', function() {
-    // Get references to the button and paragraph elements
     const button = document.getElementById('myButton');
     const paragraph = document.getElementById('myParagraph');
-
-    // Add click event listener to the button
     button.addEventListener('click', function() {
       paragraph.textContent = 'Button Clicked!';
     });
@@ -190,7 +195,6 @@ function addHighlightClass() {
 
 // 11.Create Element & Append Element:
 
-
 function createListItems() {
   var ul = document.getElementById("myList");
 
@@ -208,13 +212,11 @@ function createLi() {
 // 12.DOM Change Attribute Value:
  function changeImage(){
   let image = document.getElementById("changeImage");
-   image.src = "./images.jpg";
-   changeTextColor();
+   image.src = "./images.jpg"; 
 }
 
 function changeTextColor() {
   var paragraphs = document.querySelectorAll(".changeTextColor");
-
   paragraphs.forEach(function(paragraph) {
       paragraph.style.color = "red";
   });
@@ -231,14 +233,11 @@ function getData() {
     })
     .then(function (data) {
       console.log(data);
-      // Perform further actions with the response data
     })
     .catch(function (error) {
       console.error("Request failed:", error);
     });
 }
-
-// Call the function to send the GET request
 getData();
 
 
@@ -266,13 +265,10 @@ function postData() {
     })
     .then(function (responseData) {
       console.log(responseData);
-      // Perform further actions with the response data
     })
     .catch(function (error) {
       console.error("Request failed:", error);
     });
 }
-
-// Call the function to send the POST request
 postData();
 
