@@ -58,12 +58,12 @@
     <h3 id="Date" class="text-gray-500 font-bold">The day of the week:- </h3>
     </div>
     <div class="my-5">
-      <input type="text" name="number" id="numbers" class="input input-bordered input-info w-full max-w-xs" >
+      <input type="text" name="number" id="numbers" class="input input-bordered input-info w-full max-w-xs" placeholder="Enter desired number for sum of square">
     <button  class="btn btn-info" onclick=math()>Math</button>
     <h3 id="result" class="text-gray-500 font-bold"> The square root of the sum of squares result:- </h3>
     </div>
     <div>
-      <input type="text" name="isPrime" id="isPrime" class="input input-bordered input-info w-full max-w-xs" >
+      <input type="text" name="isPrime" id="isPrime" class="input input-bordered input-info w-full max-w-xs" placeholder="input any number to check is the Prime?" >
       <button  class="btn btn-info" onclick=isPrime()>IsPrime</button>
       <h3 id="isPrime" class="text-gray-500 font-bold"> Is the Prime number:- </h3>
     </div>
@@ -83,6 +83,70 @@
       <button  class="btn btn-info"  id="myButton">Click to change text</button>
       <p id="myParagraph" class="text-sky-400 font-bold text-xl border border-2 p-2 w-52">Initial Text</p>
     </div>
+    <form id="myForm" onsubmit="validateForm(event)">
+    
+
+
+  <div class="hero  bg-base-200">
+    <div class="hero-content ">
+ 
+      <div class="card flex-shrink-0  shadow-2xl bg-base-100">
+        <div class="card-body">
+          <div class="form-control">
+            <label>Name:</label>
+          <input type="text" name="name" required>
+          <span class="text-error-500" id="nameError"></span>
+          </div>
+        <div class="form-control">
+            <label>Email:</label>
+            <input type="email" name="email" required>
+            <span class="text-red-500" id="emailError"></span>
+          </div>
+        <div class="form-control">
+          <label>Password:</label>
+          <input type="password" name="password" required>
+          <span class="text-red-500" id="passwordError"></span>
+          </div>
+        <div class="form-control">
+          <label>Confirm Password:</label>
+          <input type="password" name="confirmPassword" required>
+          <span class="text-red-500" id="confirmPasswordError"></span>
+          </div>
+          <div class="form-control mt-6">
+            <button class="btn btn-primary">Submit</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<!-- 10.DOM Manipulate CSS Class: -->
+
+
+<button class="btn btn-primary" onclick="addHighlightClass()">Add Highlight Class</button>
+<p id="Paragraph" class="text-xl font-bold  mb-4">This is a paragraph.</p>
+
+<!-- 11.Create Element & Append Element: -->
+
+<ul id="myList" class="border border-1">
+  <button onclick=createLi() class="btn btn-primary">Click to create li below</button>
+</ul>
+
+<!-- 12.DOM Change Attribute Value: -->
+
+<img id="changeImage" src="download.jpg" alt="Initial Image">
+<button class="btn btn-primary my-1" onclick="changeImage()">Change Image</button>
+
+<div class="border border-2 my-3 p-5">
+  <button class="btn btn-primary" onclick=changeTextColor()>Change text Color</button>
+  <p class="changeTextColor">Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <p class="changeTextColor">Paragraph 3</p>
+  <p>Paragraph 4</p>
+  <p class="changeTextColor">Paragraph 5</p>
+
+</div>
 </main>
 
 
