@@ -189,17 +189,17 @@ function validateForm(event) {
 }
 // 10.DOM Manipulate CSS Class:
 function addHighlightClass() {
-  var paragraph = document.getElementById("Paragraph");
+  let paragraph = document.getElementById("Paragraph");
   paragraph.classList.add("bg-yellow-400");
 }
 
 // 11.Create Element & Append Element:
 
 function createListItems() {
-  var ul = document.getElementById("myList");
+  let ul = document.getElementById("myList");
 
-  for (var i = 1; i <= 5; i++) {
-      var li = document.createElement("li");
+  for (let i = 1; i <= 5; i++) {
+      let li = document.createElement("li");
       li.textContent =`This is the li number ${i}`;
       li.classList.add("text-gray-800", "mb-2","bg-sky-400");
       ul.appendChild(li);
@@ -216,25 +216,19 @@ function createLi() {
 }
 
 function changeTextColor() {
-  var paragraphs = document.querySelectorAll(".changeTextColor");
+  let paragraphs = document.querySelectorAll(".changeTextColor");
   paragraphs.forEach(function(paragraph) {
       paragraph.style.color = "red";
   });
 }
 
 function getData() {
-  fetch("https://api.example.com/data")
-    .then(function (response) {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Request failed. Status code: " + response.status);
-      }
-    })
-    .then(function (data) {
+  fetch("https://jsonplaceholder.typicode.com/todos/10")
+    .then(response=> response.json())
+    .then(data => {
       console.log(data);
     })
-    .catch(function (error) {
+    .catch(error => { 
       console.error("Request failed:", error);
     });
 }
@@ -243,8 +237,8 @@ getData();
 
 
 function postData() {
-  var url = "https://api.example.com/submit";
-  var data = {
+  let url = "https://api.example.com/submit";
+  let data = {
     name: "John Doe",
     email: "johndoe@example.com"
   };
@@ -256,17 +250,11 @@ function postData() {
     },
     body: JSON.stringify(data)
   })
-    .then(function (response) {
-      if (response.ok) {
-        return response.json();
-      } else {
-        throw new Error("Request failed. Status code: " + response.status);
-      }
-    })
-    .then(function (responseData) {
+  .then(response=> response.json())
+    .then(responseData=> {
       console.log(responseData);
     })
-    .catch(function (error) {
+    .catch(error => { 
       console.error("Request failed:", error);
     });
 }
